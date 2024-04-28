@@ -29,6 +29,11 @@ public class Mensaje implements Serializable {
     this.fecha = fecha;
   }
 
+  public Mensaje(String texto, Long fecha) {
+	  this.texto = texto;
+	  this.fecha = fecha;
+  }
+  
   private static final long serialVersionUID = -1386583462555421832L;
 
 }
