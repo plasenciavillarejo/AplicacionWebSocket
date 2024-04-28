@@ -51,11 +51,16 @@ public class prueba {
 	                        ZipEntry zipEntry = new ZipEntry(file.getName());
 	                        zipOut.putNextEntry(zipEntry);
 
+ 	                        /* 1ª forma de crear zip
 	                        byte[] bytes = new byte[1024];
 	                        int length;
 	                        while ((length = is.read(bytes)) >= 0) {
 	                            zipOut.write(bytes, 0, length);
-	                        }
+	                        }*/
+	                        
+	                        // 2ª Forma de crear zip
+	        		        Files.copy(file.toPath(), zipOut);
+
 	                    }
 	                }
 	            }
