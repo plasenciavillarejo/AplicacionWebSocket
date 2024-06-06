@@ -28,17 +28,26 @@ public class prueba {
 		String zipPath = "src/main/resources/ficheros/gtfs.zip";
 
 	     try (PrintWriter writer = new PrintWriter(new FileWriter(routeFile))) {
+	    	 /*stopsRoute1.stream().forEach(route -> {
+					writer.append(route + ",");
+				});
+				*/ 
 	    	   for (int i = 0; i < stopsRoute1.size(); i++) {
 	    		   writer.append(stopsRoute1.get(i) + ",");
 	    	    }
+	    	   
 	    	    writer.println(); // Nueva línea después de la cabecera
-	    	   for (int i = 0; i < timesRoute1.size(); i++) {
+	    	    /*timesRoute1.stream().forEach(time -> {
+	    	    	writer.append(timesRoute1 + ",");
+	    	    });
+	    	    */
+	    	    for (int i = 0; i < timesRoute1.size(); i++) {
 	    	        writer.append(timesRoute1.get(i) + ",");
-	    	    } 
+	    	    }
          }
-	        String directoryPath = "src/main/resources/ficheros/";
+	     String directoryPath = "src/main/resources/ficheros/";
 	     File directory = new File(directoryPath);
-	        File[] files = directory.listFiles();
+	     File[] files = directory.listFiles();
 
 	        // Crear el archivo ZIP de salida
 	        try (ZipOutputStream zipOut = new ZipOutputStream(new FileOutputStream(zipPath))) {
